@@ -6,7 +6,63 @@ return htmlElements.join(" ");
 }
 
 
+const manageSpinner=(status)=>{
+    if(status==true){
+        const container=document.getElementById("card-container").classList.add("hidden");
+        const spinner=document.getElementById("spinner").classList.remove("hidden");
 
+    }
+    else{
+        const container=document.getElementById("card-container").classList.remove("hidden");
+        const spinner=document.getElementById("spinner").classList.add("hidden");
+    }
+}
+
+// modal data display
+
+const showModalData=(id)=>{
+
+const url=`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
+fetch(url)
+.then(res=>res.json())
+.then(data=>{
+
+    const element=data.data;
+     const modal=document.getElementById("my_modal_1");
+    modal.showModal();
+    const modalDetails=document.getElementById("modalDetails");
+    modalDetails.innerHTML=`
+    
+    <div class="flex flex-col p-2.5 gap-y-2.5">
+<h1 class="font-bold text-2xl"></h1>
+<div class="flex gap-x-2">
+    <p class="bg-green-400 p-1 text-white rounded-full">Opened</p>
+    <p class="text-[#64748B]">Opened by Fahim Ahmed</p>
+    <p class="text-[#64748B]">22/02/2026</p>
+</div>
+<div>
+${loadLabels(element.labels)}
+</div>
+<p class="text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+<div class="flex gap-x-40">
+<p class="text-[#64748B]">Assignee: <br> <span class="font-bold text-xl">Fahim Ahmed  </span></p>
+<p class="text-[#64748B]">Priority: <br> <span class="bg-red-500 p-1 rounded-full text-black">High</span></p>
+
+</div>
+</div>
+    
+    `
+
+
+
+})
+
+
+
+   
+
+
+}
 
 const login=()=>{
 const userName=document.getElementById("userName").value;
@@ -28,6 +84,7 @@ else
 
 
 const loadCards=(id)=>{
+    manageSpinner(true);
     const url="https://phi-lab-server.vercel.app/api/v1/lab/issues";
     const container=document.getElementById("card-container");
     container.innerHTML="";
@@ -69,6 +126,7 @@ const z=document.getElementById("btn-close");
 z.classList.remove("btn-active");
 const btn=document.getElementById(id);
 btn.classList.add("btn-active");
+     manageSpinner(false);
 
 
 })
@@ -82,7 +140,7 @@ const displayCard=(data,border)=>{
 
     const div=document.createElement("div");
     div.innerHTML=`
-    <div class="flex flex-col  shadow-md p-6 rounded-2xl bg-white space-y-3">
+    <div class="flex flex-col  shadow-md p-6 rounded-2xl bg-white space-y-3" onclick="showModalData('${data.id}')"">
         <div class="flex justify-between items-center">
         <img src="assets/Open-Status.png" alt="">
         <p class="bg-[#FEECEC] p-2 rounded-xl">${data.priority}</p>
@@ -104,6 +162,7 @@ const displayCard=(data,border)=>{
  const container=document.getElementById("card-container");
  div.classList.add(border)
  container.append(div);
+
 
 }
 

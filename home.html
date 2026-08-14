@@ -70,7 +70,7 @@
 
 <!-- count number of cards -->
 
-<section class="flex flex-col justify-start items-start gap-y-5 md:flex-row justify-between items-center shadow-md w-9/12 mx-auto mt-8 p-7">
+<section class="flex flex-col justify-start items-start gap-y-5 md:flex-row justify-between items-center shadow-md w-9/12 mx-auto mt-8 p-7 ">
 
     <div class="flex  gap-x-3">
         <img src="assets/Aperture.png" alt="" class="bg-cyan-200 rounded-full p-2">
@@ -100,11 +100,40 @@
 </section>
 
 
+<!-- spinner -->
+
+<section class="flex justify-center items-center mt-3.5 idden" id="spinner">
+<span class="loading loading-bars loading-xl h"></span>
+
+
+
 <!-- card container -->
 
-<section id="card-container" class="bg-[#FBFBFB] mt-10 w-9/12 mx-auto grid grid-cols-3 gap-6">
+</section>
+<section id="card-container" class="bg-[#FBFBFB] mt-10 w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
    
 </section>
+
+<!-- modal integration -->
+
+<section>
+    <!-- Open the modal using ID.showModal() method -->
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <div id="modalDetails">
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+</section>
+
+
 
 <script src="index.js"></script>
 
