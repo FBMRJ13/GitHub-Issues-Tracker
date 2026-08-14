@@ -1,4 +1,12 @@
 
+const loadLabels=(label)=>{
+    const htmlElements=label.map(ele=>`<span class="bg-yellow-400 p-2 rounded-xl">${ele}</span>
+`)
+return htmlElements.join(" ");
+}
+
+
+
 
 const login=()=>{
 const userName=document.getElementById("userName").value;
@@ -82,7 +90,8 @@ const displayCard=(data,border)=>{
     <h2 class=" font-semibold text-[16px]">${data.title}</h2>
     <p class="font-medium text-[12px] text-[#6474BB]">${data.description}</p>
 <div class="flex gap-x-3">
-   
+
+   ${loadLabels(data.labels)}
 </div>
 <hr>
 <p>#${data.id} by ${data.author}</p>
@@ -90,7 +99,7 @@ const displayCard=(data,border)=>{
     </div>
     
     `
-loadLabela(data.labels);
+
 
  const container=document.getElementById("card-container");
  div.classList.add(border)
