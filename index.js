@@ -34,11 +34,11 @@ fetch(url)
     modalDetails.innerHTML=`
     
     <div class="flex flex-col p-2.5 gap-y-2.5">
-<h1 class="font-bold text-2xl"></h1>
+<h1 class="font-bold text-2xl">${element.title}</h1>
 <div class="flex gap-x-2">
-    <p class="bg-green-400 p-1 text-white rounded-full">Opened</p>
-    <p class="text-[#64748B]">Opened by Fahim Ahmed</p>
-    <p class="text-[#64748B]">22/02/2026</p>
+    <p class="bg-green-400 p-1 text-white rounded-full">${element.status}</p>
+    <p class="text-[#64748B]">${element.status} by ${element.author}</p>
+    <p class="text-[#64748B]">${element.createdAt}</p>
 </div>
 <div>
 ${loadLabels(element.labels)}
