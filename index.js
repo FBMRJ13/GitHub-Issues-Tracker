@@ -14,7 +14,7 @@ const pass=document.getElementById("pass").value;
 if(userName=="admin" && pass=="admin123"){
    
 
-    window.location.href="index.html";
+    window.location.href="home.html";
     
 
 }

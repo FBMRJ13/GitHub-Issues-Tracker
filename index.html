@@ -26,87 +26,33 @@
 </head>
 <body class="geist">
     
-
-    <!-- header section -->
-     <header class="flex flex-col space-y-5 md:flex-row justify-between items-center p-6 bg-[#F8FAFC] w-11/12 mx-auto">
-<div class="header-left flex  justify-center items-center gap-x-1">
-    <img class="h-[37px] w-[36px]" src="assets/github-logo.png" alt="">
-<h1 class="font-semibold text-2xl">GitHub Issues Tracker</h1>
-</div>
-
-
-
-<div class="header-right flex justify-center items-center gap-x-3">
-    <label class="input shadow-md">
-   <g
-      stroke-linejoin="round"
-      stroke-linecap="round"
-      stroke-width="2.5"
-      fill="none"
-      stroke="currentColor"
-    >
-      <circle cx="11" cy="11" r="8"></circle>
-      <path d="m21 21-4.3-4.3"></path>
-    </g>
-  </svg>
-  <input type="search" required placeholder="Search issues" />
-</label>
-<button class="btn  btn-primary"><i class="fa-solid fa-magnifying-glass"></i> </button>
-
-</div>
-
-     </header>
-
+<fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-2/5 mx-auto  border p-5">
+  <div class="flex flex-col justify-center items-center">
+    <img src="assets/github-logo.png" alt="">
+    <h2 class="font-bold text-2xl">GitHub Issues Tracker</h2>
+    <p class="font-medium text-[16px] text-[#64748B]">Sign in to manage your issues</p>
     
-<!-- all btns section-->
+  </div>
 
-<section class="bg-[#FFFFFF] p-7 space-x-3 shadow-md w-9/12 mx-auto mt-8">
-   <button class="btn btn-outline   btn-primary w-28 " id="btn-all" onclick="loadCards('btn-all')">All</button>
-   <button class="btn btn-outline btn-primary w-28"  id="btn-open" onclick="loadCards('btn-open')">Opened</button>
-   <button class="btn btn-outline btn-primary w-28"  id="btn-close" onclick="loadCards('btn-close')">Closed</button>
+  <label class="label font-medium text-[16px] pt-6">Username</label>
+  <input type="text" id="userName" class="input w-full" placeholder="Enter Username" />
+  <p class="text-[#4A00FF] pt-3">Default: admin</p>
 
-</section>
+  <label class="label font-medium text-[16px] pt-6">Password</label>
+  <input type="password" id="pass" class="input w-full" placeholder="Enter Password" />
+  <p class="text-[#4A00FF] pt-3">Default: admin123</p>
 
+  <button class="btn btn-primary mt-6 w-full" onclick="login()">Sign In</button>
+   <div class="flex flex-col justify-center items-center ">
+    <h2 class="font-medium text-xl pt-5">OR</h2>
+    <p class="font-medium text-[16px] text-[#64748B] pt-5">Demo Credentials:</p>
+    <p class="text-black font-bold pt-5">Username: <span  class="font-medium text-[16px] text-[#64748B]">admin</span></p>
+    <p class="text-black font-bold">Password: <span  class="font-medium text-[16px] text-[#64748B]">admin123</span></p>
+    
+  </div>
 
-<!-- count number of cards -->
-
-<section class="flex flex-col justify-start items-start gap-y-5 md:flex-row justify-between items-center shadow-md w-9/12 mx-auto mt-8 p-7">
-
-    <div class="flex  gap-x-3">
-        <img src="assets/Aperture.png" alt="" class="bg-cyan-200 rounded-full p-2">
-        <div>
-           <p class="font-semibold text-xl"> <span id="count">count</span>
-            Issues</p>
-            <p class="font-medium text-[16px]">Track and manage your project issues</p>
-        </div>
-    </div>
-
-    <div class="flex gap-x-3">
-     
-       <div class="flex justify-center items-center gap-x-1">
- <div class="bg-green-500 text-neutral-content w-[12px] h-[12px] rounded-full"></div>
- <p>Open</p>
-
-       </div>
-       
-       <div class="flex justify-center items-center gap-x-1">
- <div class="bg-purple-700 text-neutral-content w-[12px] h-[12px] rounded-full"></div>
- <p>Closed</p>
-
-       </div>
-       
-       
-    </div>
-</section>
-
-
-<!-- card container -->
-
-<section id="card-container" class="bg-[#FBFBFB] mt-10 w-9/12 mx-auto grid grid-cols-3 gap-6">
-   
-</section>
+</fieldset>
 
 <script src="index.js"></script>
-
 </body>
 </html>
