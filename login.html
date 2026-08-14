@@ -24,7 +24,7 @@
     <!-- Custom Style Sheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="geist">
     
 <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-2/5 mx-auto  border p-5">
   <div class="flex flex-col justify-center items-center">
@@ -35,14 +35,14 @@
   </div>
 
   <label class="label font-medium text-[16px] pt-6">Username</label>
-  <input type="text" class="input w-full" placeholder="Enter Username" />
+  <input type="text" id="userName" class="input w-full" placeholder="Enter Username" />
   <p class="text-[#4A00FF] pt-3">Default: admin</p>
 
   <label class="label font-medium text-[16px] pt-6">Password</label>
-  <input type="password" class="input w-full" placeholder="Enter Password" />
+  <input type="password" id="pass" class="input w-full" placeholder="Enter Password" />
   <p class="text-[#4A00FF] pt-3">Default: admin123</p>
 
-  <button class="btn btn-primary mt-6 w-full">Sign In</button>
+  <button class="btn btn-primary mt-6 w-full" onclick="login()">Sign In</button>
    <div class="flex flex-col justify-center items-center ">
     <h2 class="font-medium text-xl pt-5">OR</h2>
     <p class="font-medium text-[16px] text-[#64748B] pt-5">Demo Credentials:</p>
@@ -53,5 +53,6 @@
 
 </fieldset>
 
+<script src="index.js"></script>
 </body>
 </html>

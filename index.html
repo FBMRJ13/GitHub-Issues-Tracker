@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GitHub Issues Tracker</title>
+    
+
+    <!-- Font Awesome v6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- 1. Tailwind CSS v3 Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 2. DaisyUI CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="geist">
+    
+
+    <!-- header section -->
+     <header class="flex flex-col space-y-5 md:flex-row justify-between items-center p-6 bg-[#F8FAFC] w-11/12 mx-auto">
+<div class="header-left flex  justify-center items-center gap-x-1">
+    <img class="h-[37px] w-[36px]" src="assets/github-logo.png" alt="">
+<h1 class="font-semibold text-2xl">GitHub Issues Tracker</h1>
+</div>
+
+
+
+<div class="header-right flex justify-center items-center gap-x-3">
+    <label class="input shadow-md">
+   <g
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="2.5"
+      fill="none"
+      stroke="currentColor"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </g>
+  </svg>
+  <input type="search" required placeholder="Search issues" />
+</label>
+<button class="btn  btn-primary"><i class="fa-solid fa-magnifying-glass"></i> </button>
+
+</div>
+
+     </header>
+
+    
+<!-- all btns section-->
+
+<section class="bg-[#FFFFFF] p-7 space-x-3 shadow-md w-9/12 mx-auto mt-8">
+   <button class="btn btn-active btn-primary w-28 " id="btn-all">All</button>
+   <button class="btn btn-outline btn-primary w-28">Opened</button>
+   <button class="btn btn-outline btn-primary w-28">Closed</button>
+
+</section>
+
+
+<!-- count number of cards -->
+
+<section>
+
+    <div>
+        <img src="assets/Aperture.png" alt="">
+        <div>
+           <p> <span>count</span>
+            Issues</p>
+            <p>Track and manage your project issues</p>
+        </div>
+    </div>
+
+    <div>
+      <p><span class="  bg-[#00A96E] rounded-full"></span> Open</p>  
+      <p><span class=" rounded-full bg-[#A855F7]"><i class="fa-thin fa-circle"></i></span> Closed</p>  
+    </div>
+</section>
+
+
+
+
+
+<script src="index.js"></script>
+
+</body>
+</html>
