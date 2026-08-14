@@ -61,34 +61,64 @@
 <!-- all btns section-->
 
 <section class="bg-[#FFFFFF] p-7 space-x-3 shadow-md w-9/12 mx-auto mt-8">
-   <button class="btn btn-active btn-primary w-28 " id="btn-all">All</button>
-   <button class="btn btn-outline btn-primary w-28">Opened</button>
-   <button class="btn btn-outline btn-primary w-28">Closed</button>
+   <button class="btn btn-outline   btn-primary w-28 " id="btn-all" onclick="loadCards('btn-all')">All</button>
+   <button class="btn btn-outline btn-primary w-28"  id="btn-open" onclick="loadCards('btn-open')">Opened</button>
+   <button class="btn btn-outline btn-primary w-28"  id="btn-close" onclick="loadCards('btn-close')">Closed</button>
 
 </section>
 
 
 <!-- count number of cards -->
 
-<section>
+<section class="flex flex-col justify-start items-start gap-y-5 md:flex-row justify-between items-center shadow-md w-9/12 mx-auto mt-8 p-7">
 
-    <div>
-        <img src="assets/Aperture.png" alt="">
+    <div class="flex  gap-x-3">
+        <img src="assets/Aperture.png" alt="" class="bg-cyan-200 rounded-full p-2">
         <div>
-           <p> <span>count</span>
+           <p class="font-semibold text-xl"> <span id="count">count</span>
             Issues</p>
-            <p>Track and manage your project issues</p>
+            <p class="font-medium text-[16px]">Track and manage your project issues</p>
         </div>
     </div>
 
-    <div>
-      <p><span class="  bg-[#00A96E] rounded-full"></span> Open</p>  
-      <p><span class=" rounded-full bg-[#A855F7]"><i class="fa-thin fa-circle"></i></span> Closed</p>  
+    <div class="flex gap-x-3">
+     
+       <div class="flex justify-center items-center gap-x-1">
+ <div class="bg-green-500 text-neutral-content w-[12px] h-[12px] rounded-full"></div>
+ <p>Open</p>
+
+       </div>
+       
+       <div class="flex justify-center items-center gap-x-1">
+ <div class="bg-purple-700 text-neutral-content w-[12px] h-[12px] rounded-full"></div>
+ <p>Closed</p>
+
+       </div>
+       
+       
     </div>
 </section>
 
 
+<!-- card container -->
 
+<section id="card-container" class="bg-[#FBFBFB] mt-10 w-9/12 mx-auto grid grid-cols-3 gap-6">
+    <div class="flex flex-col w-[200px] border-t-green-500">
+        <div class="flex justify-between items-center">
+        <img src="assets/Open-Status.png" alt="">
+        <p>High</p>
+    </div>
+    <h2>Fix navigation menu on mobile devices</h2>
+    <p>The navigation menu doesn't collapse properly on mobile devices...</p>
+<div class="flex gap-x-3">
+    <p class="bg-yellow-300">Bug</p>
+    <p>help wanted</p>
+</div>
+<p>#1
+by john_doe</p>
+<p>1/15/2024</p>
+    </div>
+</section>
 
 
 <script src="index.js"></script>

@@ -5,7 +5,13 @@
   font-family: "Geist", sans-serif;
   
 }
-/* .active{
-    bg:blue;
-    color: white;
-} */
+
+.add-border-green{
+    border-top: 5px solid green;
+    border-radius: 10px;
+}
+
+.add-border-purple{
+    border-top: 5px solid purple;
+    border-radius: 10px;
+}
