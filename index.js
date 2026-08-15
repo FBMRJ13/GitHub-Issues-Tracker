@@ -43,10 +43,10 @@ fetch(url)
 <div>
 ${loadLabels(element.labels)}
 </div>
-<p class="text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+<p class="text-[#64748B]">${element.description}</p>
 <div class="flex gap-x-40">
-<p class="text-[#64748B]">Assignee: <br> <span class="font-bold text-xl">Fahim Ahmed  </span></p>
-<p class="text-[#64748B]">Priority: <br> <span class="bg-red-500 p-1 rounded-full text-black">High</span></p>
+<p class="text-[#64748B]">Assignee: <br> <span class="font-bold text-xl">${element.assignee}  </span></p>
+<p class="text-[#64748B]">Priority: <br> <span class="bg-red-500 p-1 rounded-full text-black">${element.priority}</span></p>
 
 </div>
 </div>
@@ -140,7 +140,7 @@ const displayCard=(data,border)=>{
 
     const div=document.createElement("div");
     div.innerHTML=`
-    <div class="flex flex-col  shadow-md p-6 rounded-2xl bg-white space-y-3" onclick="showModalData('${data.id}')"">
+    <div class="flex flex-col  shadow-md p-6 rounded-2xl bg-white space-y-3" onclick="showModalData('${data.id}')">
         <div class="flex justify-between items-center">
         <img src="assets/Open-Status.png" alt="">
         <p class="bg-[#FEECEC] p-2 rounded-xl">${data.priority}</p>
@@ -169,3 +169,37 @@ const displayCard=(data,border)=>{
 
 
 loadCards("btn-all");
+
+document.getElementById("btn-search").addEventListener("click",()=>{
+
+const searchValue=document.getElementById("search-value");
+const input=searchValue.value.trim().toLowerCase();
+
+fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+.then(res=>res.json())
+.then(data=>{
+
+const element=data.data;
+const filterElement=element.filter(ele=>ele.title.toLowerCase().includes(input));
+
+const container = document.getElementById("card-container");
+      container.innerHTML = "";
+
+filterElement.forEach((ele)=>{
+    if(ele.status=="open")
+            displayCard(ele,"add-border-green");
+        else  if(ele.status=="closed")
+            displayCard(ele,"add-border-purple");
+
+
+})
+
+const count=document.getElementById("count");
+count.innerText=container.children.length;
+
+});
+
+
+
+}
+)
